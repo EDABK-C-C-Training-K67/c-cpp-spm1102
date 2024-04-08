@@ -1,6 +1,8 @@
 # Midterm Project: Building a Command-Line Shell in C
 
 > Deadline: April 14, 2024
+>
+> Tutorial: [Tutorial - Write a Shell in C - Stephen Brennan](https://brennan.io/2015/01/16/write-a-shell-in-c/)
 
 ## Objective
 The goal of this project is to construct a command-line shell in the C programming language. This shell should be capable of executing common cmd commands and should also have the functionality to execute commands from a file.
