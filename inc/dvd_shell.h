@@ -1,9 +1,15 @@
+#ifndef DVD_SHELL_H
+#define DVD_SHELL_H
+
+
 //Prototype of builtin functions
 int dvd_cd(char** args);
 int dvd_help(char** args);
 int dvd_exit(char** args);
 int dvd_ls(char** args);
 int dvd_cls(char** args);
+
+int dvd_num_builtins(void);
 
 //prototype of function carrying out basic functions of shell
 
@@ -21,3 +27,5 @@ int dvd_execute(char** args);
 
 //working loop
 void dvd_loop(void);
+
+#endif

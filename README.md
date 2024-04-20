@@ -12,4 +12,4 @@ You can use this shell simply by running the `.\bin\main.exe\` file.
 # Sample
 After you run the `.\bin\main.exe\` file, type `help` for example, the shell will give you 5 builtin functions as I mentioned above.
 
-![alt text](image.png)
+![alt text](image-1.png)
