@@ -8,8 +8,8 @@ DVD is a simple implementation of a shell in C. It demonstrates the basics of ho
 - No piping or redirection.
 - Only builtins are: `cd`, `help`, `exit`, `ls`, `cls`.
 # Running
-You can use this shell simply by running the `.\bin\main.exe\` file.
+You can use this shell simply by running the `.\bin\dvd_shell.exe\` file.
 # Sample
-After you run the `.\bin\main.exe\` file, type `help` for example, the shell will give you 5 builtin functions as I mentioned above.
+After you run the `.\bin\dvd_shell.exe\` file, type `help` for example, the shell will give you 5 builtin functions as I mentioned above.
 
 ![alt text](image-1.png)
