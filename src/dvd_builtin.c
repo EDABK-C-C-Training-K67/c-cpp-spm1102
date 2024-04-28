@@ -6,6 +6,7 @@
 
 
 //Definition of builtin functions
+char* builtin_str[] = {"cd", "help", "exit", "ls", "cls","pwd"};
 int dvd_cd(char** args){
     if(args[1] == NULL){
         fprintf(stderr, "dvd: expected argument to \"cd\"\n");
@@ -18,7 +19,6 @@ int dvd_cd(char** args){
     return 1;
 }
 
-char* builtin_str[] = {"cd", "help", "exit", "ls", "cls"};
 int dvd_help(char** args){
     int i;
     printf("Do Viet Dung's DVD\n");
@@ -58,5 +58,15 @@ int dvd_ls(char** args){
 
 int dvd_cls(char** args){
     system("cls");
+    return 1;
+}
+
+int dvd_pwd(char** args){
+    char cwd[1024]; 
+    if(getcwd(cwd, sizeof(cwd)) != NULL){
+         printf("%s", cwd);
+    } else {
+        perror("getcwd");
+    }
     return 1;
 }

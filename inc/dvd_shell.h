@@ -8,6 +8,7 @@ int dvd_help(char** args);
 int dvd_exit(char** args);
 int dvd_ls(char** args);
 int dvd_cls(char** args);
+int dvd_pwd(char** args);
 
 int dvd_num_builtins(void);
 

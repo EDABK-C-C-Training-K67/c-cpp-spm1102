@@ -11,10 +11,11 @@ int (*builtin_func[])(char**) = {
     &dvd_help,
     &dvd_exit,
     &dvd_ls,
-    &dvd_cls
+    &dvd_cls,
+    &dvd_pwd
 };
 
-static char* builtin_str[] = {"cd", "help", "exit", "ls", "cls"};
+static char* builtin_str[] = {"cd", "help", "exit", "ls", "cls","pwd"};
 
 int dvd_num_builtins(){
     return sizeof(builtin_str) / sizeof(char*);
@@ -47,8 +48,11 @@ int dvd_execute(char** args){
         return 1;
     }
     for(i = 0; i < dvd_num_builtins(); i++){
-        if(strcmp(args[0], builtin_str[i]) == 0){
-            return (*builtin_func[i])(args);
+        char** argu = NULL;
+        argu[0] = strtok(args[0], " ");
+        argu[1] = strtok(NULL, " ");
+        if(strcmp(argu[0], builtin_str[i]) == 0){
+            return (*builtin_func[i])(argu);
         }
     }
     return dvd_launch(args);
@@ -61,7 +65,7 @@ int dvd_execute(char** args){
 char** dvd_split_line(char* line){
     int bufsize = DVD_TOK_BUFSIZE, position = 0;
     char** tokens = malloc(bufsize * sizeof(char*));
-    char* token;
+    char* token = NULL;
 
     if(!tokens){
         fprintf(stderr, "dvd: allocation error\n");
@@ -122,8 +126,8 @@ char* dvd_read_line(void){
 }
 
 void dvd_loop(void){
-    char* line;
-    char** args;
+    char* line = NULL;
+    char** args = NULL;
     int status;
 
     do{
